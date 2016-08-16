@@ -1,4 +1,9 @@
 <?php
+/**
+ * The template used for displaying testimonials.
+ *
+ * @package YetiBreath
+ */
 $testimonials = new WP_Query( array(
 	'post_type'      => 'jetpack-testimonial',
 	'order'          => 'ASC',

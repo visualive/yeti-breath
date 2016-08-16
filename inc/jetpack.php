@@ -45,6 +45,9 @@ function yetibreath_infinite_scroll_render() {
 	}
 }
 
+/**
+ * Jetpack social menu.
+ */
 function yetibreath_social_menu() {
 	if ( ! function_exists( 'jetpack_social_menu' ) ) {
 		return;

@@ -1,3 +1,10 @@
+<?php
+/**
+ * The template used for displaying site branding.
+ *
+ * @package YetiBreath
+ */
+?>
 <div class="site-branding">
 	<?php
 	if ( is_front_page() && is_home() ) : ?>
