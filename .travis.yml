@@ -64,6 +64,7 @@ before_script:
   # Set up Twenty Sixteen theme information.
   - theme_slug=$(basename $(pwd))
   - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
+  - export WP_THEME_DIR=$theme_dir
   - cd ..
   - mv $theme_slug $theme_dir
   # Set up WordPress configuration.
@@ -108,7 +109,7 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
-  - $PHPMD_DIR/src/bin/phpmd components/,inc/,templates/,404.php,archive.php,archive-jetpack-testimonial.php,comments.php,footer.php,functions.php,header.php,index.php,page.php,search.php,sidebar.php,single.php text phpmd.ruleset.xml
+  - $PHPMD_DIR/src/bin/phpmd $WP_THEME_DIR text phpmd.ruleset.xml
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
