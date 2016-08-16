@@ -10,6 +10,7 @@
     <rule ref="WordPress-Core">
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+        <exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
 
         <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 
