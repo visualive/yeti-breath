@@ -57,7 +57,8 @@ matrix:
 # Failures in this section will result in build status 'errored'.
 before_script:
   # Set up WordPress installation.
-  - export WP_DEVELOP_DIR=/tmp/wordpress/
+  - root_dir=$(pwd)
+  - export WP_DEVELOP_DIR=/tmp/wordpress
   - mkdir -p $WP_DEVELOP_DIR
   # Use the Git mirror of WordPress.
   - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
@@ -84,15 +85,12 @@ before_script:
   # Set install path for WordPress Coding Standards
   # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
   - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
-  # Hop into themes directory.
-  - cd $theme_dir
   # Install PHPMD
-  - mkdir phpmd && curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C phpmd
+  - echo $root_dir
+  - export PHPMD_DIR=/tmp/phpmd
+  - cd $root_dir && mkdir -p $PHPMD_DIR && curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C $PHPMD_DIR
   # Hop into themes directory.
   - cd $theme_dir
-  - ls -al
-  - cd ~/
-  - ls -al
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash
 
@@ -112,7 +110,7 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
-  - $WP_DEVELOP_DIR/phpmd/src/bin/phpmd components/,inc/,templates/,404.php,archive.php,archive-jetpack-testimonial.php,comments.php,footer.php,functions.php,header.php,index.php,page.php,search.php,sidebar.php,single.php text phpmd.ruleset.xml
+  - $PHPMD_DIR/src/bin/phpmd components/,inc/,templates/,404.php,archive.php,archive-jetpack-testimonial.php,comments.php,footer.php,functions.php,header.php,index.php,page.php,search.php,sidebar.php,single.php text phpmd.ruleset.xml
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
