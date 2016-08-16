@@ -15,7 +15,7 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function yetibreath_setup() {
-		/*
+		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on components, use a find and replace
@@ -23,10 +23,12 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 		 */
 		load_theme_textdomain( 'yetibreath', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
+		/**
+		 * Add default posts and comments RSS feed links to head.
+		 */
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
+		/**
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
 		 * hard-coded <title> tag in the document head, and expect WordPress to
@@ -34,7 +36,7 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		/*
+		/**
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -45,7 +47,9 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 		add_image_size( 'yetibreath-hero', 1280, 1000, true );
 		add_image_size( 'yetibreath-thumbnail-avatar', 100, 100, true );
 
-		// This theme uses wp_nav_menu() in one location.
+		/**
+		 * This theme uses wp_nav_menu() in one location.
+		 */
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Top', 'yetibreath' ),
 		) );
@@ -60,7 +64,7 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		/*
+		/**
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
@@ -72,7 +76,7 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 			'caption',
 		) );
 
-		/*
+		/**
 		 * Enable support for Post Formats.
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
@@ -84,7 +88,9 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 			'link',
 		) );
 
-		// Set up the WordPress core custom background feature.
+		/**
+		 * Set up the WordPress core custom background feature.
+		 */
 		add_theme_support( 'custom-background', apply_filters( 'yetibreath_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
