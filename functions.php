@@ -1,6 +1,6 @@
 <?php
 /**
- * components functions and definitions.
+ * Components functions and definitions.
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
  * @package YetiBreath
@@ -8,7 +8,6 @@
 
 if ( ! function_exists( 'yetibreath_setup' ) ) :
 	/**
-	 * Sets up theme.
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 * Note that this function is hooked into the aftercomponentsetup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
@@ -62,7 +61,7 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 			'width'       => 200,
 			'flex-width'  => true,
 			'flex-height' => true,
-		 );
+		) );
 
 		/**
 		 * Switch default core markup for search form, comment form, and comments
