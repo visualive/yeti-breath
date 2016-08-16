@@ -8,6 +8,7 @@
 
 if ( ! function_exists( 'yetibreath_setup' ) ) :
 	/**
+	 * Sets up theme.
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 * Note that this function is hooked into the aftercomponentsetup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
@@ -93,6 +94,7 @@ endif;
 add_action( 'after_setup_theme', 'yetibreath_setup' );
 
 /**
+ * Content width.
  * Set the content width in pixels, based on the theme's design and stylesheet.
  * Priority 0 to make it available to lower priority callbacks.
  *
