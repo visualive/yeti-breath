@@ -6,8 +6,8 @@
  * @link      https://www.visualive.jp/
  * @license   MIT License
  */
-"use strict";
+'use strict';
 
-var conf = require("./source/gulp/config.js");
-var requireDir = require("require-dir");
+var conf = require('./source/gulp/config.js');
+var requireDir = require('require-dir');
 var tasks = requireDir(conf.gulpTasks);
