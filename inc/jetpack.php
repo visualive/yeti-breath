@@ -2,14 +2,12 @@
 /**
  * Jetpack Compatibility File.
  *
- * @link https://jetpack.me/
- *
+ * @link    https://jetpack.me/
  * @package YetiBreath
  */
 
 /**
  * Jetpack setup function.
- *
  * See: https://jetpack.me/support/infinite-scroll/
  * See: https://jetpack.me/support/responsive-videos/
  */
@@ -30,6 +28,7 @@ function yetibreath_jetpack_setup() {
 	// Add theme support for testimonials
 	add_theme_support( 'jetpack-testimonial' );
 }
+
 add_action( 'after_setup_theme', 'yetibreath_jetpack_setup' );
 
 /**
@@ -39,9 +38,9 @@ function yetibreath_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
-		    get_template_part( 'components/post/content', 'search' );
+			get_template_part( 'components/post/content', 'search' );
 		else :
-		    get_template_part( 'components/post/content', get_post_format() );
+			get_template_part( 'components/post/content', get_post_format() );
 		endif;
 	}
 }

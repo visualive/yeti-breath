@@ -1,12 +1,10 @@
 <?php
 /**
  * The template for displaying comments.
- *
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
+ * @link    https://codex.wordpress.org/Template_Hierarchy
  * @package YetiBreath
  */
 
@@ -27,45 +25,47 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'yetibreath' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
+			printf( // WPCS: XSS OK.
+				esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'yetibreath' ) ),
+				number_format_i18n( get_comments_number() ),
+				'<span>' . get_the_title() . '</span>'
+			);
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'yetibreath' ); ?></h2>
-			<div class="nav-links">
+			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'yetibreath' ); ?></h2>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'yetibreath' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'yetibreath' ) ); ?></div>
+				<div class="nav-links">
 
-			</div>
-		</nav>
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'yetibreath' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'yetibreath' ) ); ?></div>
+
+				</div>
+			</nav>
 		<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
+			wp_list_comments( array(
+				'style'      => 'ol',
+				'short_ping' => true,
+			) );
 			?>
 		</ol>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'yetibreath' ); ?></h2>
-			<div class="nav-links">
+			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'yetibreath' ); ?></h2>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'yetibreath' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'yetibreath' ) ); ?></div>
+				<div class="nav-links">
 
-			</div>
-		</nav>
-		<?php
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'yetibreath' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'yetibreath' ) ); ?></div>
+
+				</div>
+			</nav>
+			<?php
 		endif; // Check for comment navigation.
 
 	endif; // Check for have_comments().
@@ -75,7 +75,7 @@ if ( post_password_required() ) {
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'yetibreath' ); ?></p>
-	<?php
+		<?php
 	endif;
 
 	comment_form();

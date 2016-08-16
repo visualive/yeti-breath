@@ -2,11 +2,9 @@
 /**
  * Template part for displaying a message that posts cannot be found.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
+ * @link    https://codex.wordpress.org/Template_Hierarchy
  * @package YetiBreath
  */
-
 ?>
 
 <section class="no-results not-found">
@@ -23,13 +21,13 @@
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'yetibreath' ); ?></p>
 			<?php
-				get_search_form();
+			get_search_form();
 
 		else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'yetibreath' ); ?></p>
 			<?php
-				get_search_form();
+			get_search_form();
 
 		endif; ?>
 	</div>

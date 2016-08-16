@@ -1,7 +1,6 @@
 <?php
 /**
  * WordPress.com-specific functions and definitions.
- *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
  * @package YetiBreath
@@ -26,4 +25,5 @@ function yetibreath_wpcom_setup() {
 		);
 	}
 }
+
 add_action( 'after_setup_theme', 'yetibreath_wpcom_setup' );

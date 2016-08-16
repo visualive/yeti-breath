@@ -1,7 +1,6 @@
 <?php
 /**
  * Custom functions that act independently of the theme templates.
- *
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package YetiBreath
@@ -11,6 +10,7 @@
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ *
  * @return array
  */
 function yetibreath_body_classes( $classes ) {
@@ -23,7 +23,7 @@ function yetibreath_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-	
+
 	// Add a class of no-sidebar when there is no sidebar present
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
@@ -31,4 +31,5 @@ function yetibreath_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'yetibreath_body_classes' );

@@ -7,15 +7,15 @@
 
 get_header(); ?>
 
-	<?php $jetpack_options = get_theme_mod( 'jetpack_testimonials' ); ?>
+<?php $jetpack_options = get_theme_mod( 'jetpack_testimonials' ); ?>
 
-	<?php if ( isset( $jetpack_options['featured-image'] ) && '' != $jetpack_options['featured-image'] ) : ?>
-		<div class="yetibreath-hero">
-			<?php echo wp_get_attachment_image( (int)$jetpack_options['featured-image'], 'yetibreath-hero' ); ?>
-		</div>
-	<?php endif; ?>
+<?php if ( isset( $jetpack_options['featured-image'] ) && '' != $jetpack_options['featured-image'] ) : ?>
+	<div class="yetibreath-hero">
+		<?php echo wp_get_attachment_image( (int) $jetpack_options['featured-image'], 'yetibreath-hero' ); ?>
+	</div>
+<?php endif; ?>
 
-	<?php if ( '' != $jetpack_options['page-content'] ) : // only display if content not empty ?>
+<?php if ( '' != $jetpack_options['page-content'] ) : // only display if content not empty ?>
 
 	<div class="content-wrapper">
 
@@ -25,10 +25,11 @@ get_header(); ?>
 				<header class="entry-header">
 					<h1 class="entry-title">
 						<?php
-							if ( isset( $jetpack_options['page-title'] ) && '' != $jetpack_options['page-title'] )
-								echo esc_html( $jetpack_options['page-title'] );
-							else
-								esc_html_e( 'Testimonials', 'yetibreath' );
+						if ( isset( $jetpack_options['page-title'] ) && '' != $jetpack_options['page-title'] ) {
+							echo esc_html( $jetpack_options['page-title'] );
+						} else {
+							esc_html_e( 'Testimonials', 'yetibreath' );
+						}
 						?>
 					</h1>
 				</header>
@@ -41,26 +42,26 @@ get_header(); ?>
 			</main>
 		</div>
 	</div>
-	<?php endif; ?>
+<?php endif; ?>
 
-	<?php if ( have_posts() ) : ?>
+<?php if ( have_posts() ) : ?>
 
-		<div id="grid-view" class="grid-area">
-			<div class="grid-wrapper clear">
+	<div id="grid-view" class="grid-area">
+		<div class="grid-wrapper clear">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-					<div class="grid">
-						<?php get_template_part( 'components/features/testimonials/content', 'testimonials' ); ?>
-					</div>
-				<?php endwhile; ?>
+				<div class="grid">
+					<?php get_template_part( 'components/features/testimonials/content', 'testimonials' ); ?>
+				</div>
+			<?php endwhile; ?>
 
-			</div>
 		</div>
+	</div>
 	<?php
-		the_posts_navigation();
-		endif;
-		wp_reset_postdata();
-	?>
+	the_posts_navigation();
+endif;
+wp_reset_postdata();
+?>
 
 <?php get_footer(); ?>

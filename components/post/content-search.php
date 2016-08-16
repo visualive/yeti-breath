@@ -2,11 +2,9 @@
 /**
  * Template part for displaying results in search pages.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
+ * @link    https://codex.wordpress.org/Template_Hierarchy
  * @package YetiBreath
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
