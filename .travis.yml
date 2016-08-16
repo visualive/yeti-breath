@@ -18,6 +18,8 @@ php:
   - 5.5
   - 5.6
   - 7.0
+  - hhvm
+  - nightly
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
@@ -84,6 +86,10 @@ before_script:
   - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
   # Hop into themes directory.
   - cd $theme_dir
+  # Install PHPMD
+  - mkdir phpmd && curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C phpmd
+  # Hop into themes directory.
+  - cd $theme_dir
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash
 
@@ -103,6 +109,7 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+  - $WP_DEVELOP_DIR/phpmd/src/bin/phpmd ./ text phpmd.ruleset.xml
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
