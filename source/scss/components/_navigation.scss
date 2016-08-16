@@ -1,0 +1,20 @@
+.main-navigation {
+    @include show-for(medium);
+}
+
+.main-navigation-mobile {
+    @include show-for-only(small);
+}
+
+.menu {
+    @include menu-base;
+    @include menu-icons;
+    @include menu-direction(horizontal);
+
+    &.vertical {
+        @include menu-direction(vertical);
+    }
+}
+
+@include foundation-dropdown-menu;
+@include foundation-accordion-menu;

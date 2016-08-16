@@ -1,0 +1,5 @@
+@include foundation-typography-base;
+
+.screen-reader-text {
+    @include element-invisible;
+}
