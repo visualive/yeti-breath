@@ -1,0 +1,20 @@
+.site-header,
+.site-content,
+.site-footer {
+    @include clearfix;
+    @include grid-row();
+}
+
+.content-area {
+    @include grid-col;
+    @include breakpoint(medium) {
+        @include grid-col(8);
+    }
+}
+
+.widget-area {
+    @include grid-col;
+    @include breakpoint(medium) {
+        @include grid-col(4);
+    }
+}
