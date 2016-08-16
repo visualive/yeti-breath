@@ -1,5 +1,5 @@
 /**
- * Gulp for foundation.
+ * WPG for foundation.
  *
  * @author    KUCKLU & VisuALive.
  * @copyright Copyright (c) KUCKLU and VisuAlive.

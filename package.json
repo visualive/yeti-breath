@@ -1,18 +1,18 @@
 {
   "private": true,
-  "name": "gulp-for-foundation",
+  "name": "wpg-for-foundation",
   "version": "1.0.0",
-  "description": "Gulp tasks using the Foundation6 for sites.",
+  "description": "Gulp tasks using the Foundation for sites in WordPress.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/visualive/gulp-for-foundation.git"
+    "url": "https://github.com/visualive/wpg-for-foundation.git"
   },
   "author": "KUCKLU & VisuAlive",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/visualive/gulp-for-foundation/issues"
+    "url": "https://github.com/visualive/wpg-for-foundation/issues"
   },
-  "homepage": "https://github.com/visualive/gulp-for-foundation#readme",
+  "homepage": "https://github.com/visualive/wpg-for-foundation#readme",
   "scripts": {
     "b": "./node_modules/.bin/bower",
     "g": "./node_modules/.bin/gulp",
