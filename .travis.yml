@@ -87,7 +87,7 @@ before_script:
   # Hop into WordPress directory.
   - cd $WP_DEVELOP_DIR
   - cd ..
-  - export PHPMD_DIR=$(PWD)/phpmd/
+  - export PHPMD_DIR=$(pwd)/phpmd/
   # Install PHPMD
   - mkdir -p $PHPMD_DIR
   - curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C phpmd
