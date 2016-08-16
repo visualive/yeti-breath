@@ -88,7 +88,7 @@ before_script:
   # Install PHPMD
   - echo $root_dir
   - export PHPMD_DIR=/tmp/phpmd
-  - cd $root_dir && mkdir -p $PHPMD_DIR && curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C $PHPMD_DIR
+  - cd ${root_dir}/ && mkdir -p $PHPMD_DIR && curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C $PHPMD_DIR
   # Hop into themes directory.
   - cd $theme_dir
   # After CodeSniffer install you should refresh your path.
