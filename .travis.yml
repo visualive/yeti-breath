@@ -63,10 +63,9 @@ before_script:
   - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
   # Set up Twenty Sixteen theme information.
   - theme_slug=$(basename $(pwd))
-  - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
-  - export WP_THEME_DIR=$theme_dir
+  - export WP_THEME_DIR=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
   - cd ..
-  - mv $theme_slug $theme_dir
+  - mv $theme_slug $WP_THEME_DIR
   # Set up WordPress configuration.
   - cd $WP_DEVELOP_DIR
   - echo $WP_DEVELOP_DIR
@@ -89,7 +88,7 @@ before_script:
   - export PHPMD_DIR=/tmp/phpmd
   - cd $WP_DEVELOP_DIR && cd ../../ && mkdir -p $PHPMD_DIR && curl -L https://github.com/phpmd/phpmd/archive/master.tar.gz | tar xz --strip-components=1 -C $PHPMD_DIR
   # Hop into themes directory.
-  - cd $theme_dir
+  - cd $WP_THEME_DIR
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash
 
