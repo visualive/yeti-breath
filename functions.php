@@ -49,9 +49,9 @@ if ( ! function_exists( 'yetibreath_setup' ) ) :
 		/**
 		 * This theme uses wp_nav_menu() in one location.
 		 */
-		register_nav_menus( array(
+		register_nav_menus( [
 			'menu-1' => esc_html__( 'Top', 'yetibreath' ),
-		) );
+		] );
 
 		/**
 		 * Add support for core custom logo.
