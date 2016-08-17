@@ -14,11 +14,11 @@ branches:
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
+  - 5.3
   - 5.4
   - 5.5
   - 5.6
   - 7.0
-  - hhvm
   - nightly
 
 # Declare which versions of WordPress to test against.
@@ -36,10 +36,6 @@ env:
   # @link https://github.com/WordPress/WordPress/tree/4.5-branch
   - WP_VERSION=4.5 WP_MULTISITE=0
   - WP_VERSION=4.5 WP_MULTISITE=1
-  # WordPress 4.4
-  # @link https://github.com/WordPress/WordPress/tree/4.4-branch
-  - WP_VERSION=4.4 WP_MULTISITE=0
-  - WP_VERSION=4.4 WP_MULTISITE=1
 
 # Declare 5.6 beta in test matrix.
 # @link https://buddypress.trac.wordpress.org/ticket/5620
