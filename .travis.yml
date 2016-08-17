@@ -110,7 +110,7 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
-  - ${PHPMD} ${WP_THEME_DIR}/ text ./phpmd.ruleset.xml
+  - ${PHPMD} ./ text ./phpmd.ruleset.xml
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
