@@ -117,9 +117,7 @@ add_action( 'after_setup_theme', 'yetibreath_content_width', 0 );
  * @todo Remove after WP 4.7
  */
 function yetibreath_the_custom_logo() {
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		return;
-	} else {
+	if ( function_exists( 'the_custom_logo' ) ) {
 		the_custom_logo();
 	}
 }
