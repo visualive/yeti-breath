@@ -87,13 +87,14 @@ before_script:
   # Hop into WordPress directory.
   - cd $WP_DEVELOP_DIR
   - cd ..
+  # Install PHPMD
   - export PHPMD_DIR=$(pwd)/phpmd/
   - export PHPMD=${PHPMD_DIR}phpmd
-  # Install PHPMD
-  - mkdir -p $PHPMD_DIR
+  - mkdir -p ${PHPMD_DIR}
   - curl -L http://static.phpmd.org/php/latest/phpmd.phar -o ${PHPMD}
+  - chmod +x ${PHPMD}
   # Hop into themes directory.
-  - cd $WP_THEME_DIR
+  - cd ${WP_THEME_DIR}
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash
 
@@ -113,7 +114,7 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
-  - $PHPMD ${WP_THEME_DIR}/ text phpmd.ruleset.xml
+  - ${PHPMD} ${WP_THEME_DIR}/ text phpmd.ruleset.xml
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
