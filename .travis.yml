@@ -8,6 +8,11 @@
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
+# Ditch sudo and use containers.
+# @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
+# @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
+sudo: false
+
 branches:
   only:
     - master
@@ -39,10 +44,10 @@ env:
 # Declare 5.6 beta in test matrix.
 # @link https://buddypress.trac.wordpress.org/ticket/5620
 # @link http://docs.travis-ci.com/user/build-configuration/
-matrix:
-  allow_failures:
-    - php: 5.6
-  fast_finish: true
+#matrix:
+#  allow_failures:
+#    - php: 5.6
+#  fast_finish: true
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
