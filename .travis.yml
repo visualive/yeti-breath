@@ -99,7 +99,7 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
-  # Search for PHP syntax errors.
+  # Search for PHP syntax error.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
