@@ -1,25 +1,25 @@
 {
   "private": true,
-  "name": "wpg-for-foundation",
+  "name": "wp-theme-visualive",
   "version": "1.0.0",
-  "description": "Gulp tasks using the Foundation for sites in WordPress.",
+  "description": "Gulp tasks using the Foundation for sites in WordPress theme.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/visualive/wpg-for-foundation.git"
+    "url": "https://github.com/visualive/wp-theme-visualive.git"
   },
   "author": "KUCKLU & VisuAlive",
-  "license": "MIT",
+  "license": "GPL-v3.0",
   "bugs": {
-    "url": "https://github.com/visualive/wpg-for-foundation/issues"
+    "url": "https://github.com/visualive/wp-theme-visualive/issues"
   },
-  "homepage": "https://github.com/visualive/wpg-for-foundation#readme",
+  "homepage": "https://github.com/visualive/wp-theme-visualive#readme",
   "scripts": {
-    "b": "./node_modules/.bin/bower",
-    "g": "./node_modules/.bin/gulp",
-    "i": "npm install --save-dev",
-    "u": "npm uninstall --save-dev",
+    "bower": "./node_modules/.bin/bower",
+    "gulp": "./node_modules/.bin/gulp",
+    "install": "npm install --save-dev",
+    "uninstall": "npm uninstall --save-dev",
     "up": "./node_modules/.bin/npm-check-updates -u && npm install",
-    "l": "npm ls --depth=0"
+    "list": "npm ls --depth=0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.13.2",
